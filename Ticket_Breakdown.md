@@ -9,23 +9,24 @@ The structure in my head.
 
 **facilities**
 
-*   id
+*   id BIGINT PK
 *   name
+*   timestamps
 
 **agents**
 
-*   id
-*   name
-*   department
+*   id BIGINT PK
+*   name VARCHAR(70)
+*   department VARCHAR(70)
+*   timestamps
 
 **shifts**
 
 *   id
-*   code
-*   date
-*   start_time
-*   end_time
-*   facility_id
+*   code VARCHAR(70)
+*   start_time timestamp
+*   end_time timestamp
+*   facility_id FK facilities
 *   timestamps.
 
   
@@ -39,9 +40,9 @@ The structure in my head.
 1. First normalize the DB and add a new table `agent_shift`. with the schema below. 
 
 *   id.
-*   shift_id.
-*   custom_id.
-*   agent_id
+*   shift_id BIGINT FK shifts
+*   custom_id. VARCHAR(70)
+*   agent_id BIGINT FK agents
 
 Now the relationship would be.
 
