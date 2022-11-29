@@ -46,6 +46,7 @@ Now the relation would be.
 
 <br/>
 2. Modification to save Modify the existing functionality to save custom_id for agent when they are assigned to a shift by the facility admin, and make provision to save the record on the `agent_shift` table. You can also make provisions to migrate all the existing data stored into this table. When migrating the existing data since custom_id would be null, we can generate a random uuid and save for the existing records.
+
 <br/>
 3. Update all SQL queries used in getShiftByFacility and generateReport, since the update would break the existing code.
 
