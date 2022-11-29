@@ -1,0 +1,1 @@
+1. First we make assumption on different types of partition keys that can be passed.
