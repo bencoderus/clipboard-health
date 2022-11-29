@@ -14,10 +14,10 @@ cd clipboard-health && npm install
 
 Run function.
 ``` bash
-cd clipboard-health && npm run start
+npm run start
 ```
 
 Run test.
 ``` bash
-cd clipboard-health && npm test
+npm test
 ```
