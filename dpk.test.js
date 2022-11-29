@@ -1,7 +1,7 @@
 const { deterministicPartitionKey } = require("./dpk");
 const crypto = require('crypto');
 
-test("when a partition key is provided it would be used as the candidate", () => {
+test("when a partition key is provided, it would be used as the candidate", () => {
   const payload = {
     name: "benjamin",
     partitionKey: "hello",
@@ -13,7 +13,7 @@ test("when a partition key is provided it would be used as the candidate", () =>
 });
 
 
-test("when the partition key provided is not string", () => {
+test("when the partition key provided is not a string", () => {
     const payload = {
       name: "benjamin",
       partitionKey: {"key": "ahahahseiei"},
@@ -56,7 +56,7 @@ test("when the partition key provided is not string", () => {
   });
 
 
-test("when a partition key is provided it would be use a sha512 hash generated using the payload", () => {
+test("when a partition key is not provided, it would use a sha512 hash generated using the payload", () => {
     const payload = {
         name: "benjamin",
     };
@@ -92,7 +92,7 @@ test("when a partition key is provided it would be use a sha512 hash generated u
   });
 
 
-  test("when a partition key provided is greater than 256 characters it would hash the partition key and use the hashed value", () => {
+  test("when a partition key provided is greater than 256 characters, it would hash the partition key and use the hashed value", () => {
     const payload = {
         name: "benjamin",
         partitionKey: "hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellhellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohelloohellohellohellohellohellohellohellohellohello",
