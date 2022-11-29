@@ -37,7 +37,7 @@ The structure in my head.
 
   
 **What needs to be done?**   
-1. First normalize the DB and add a new table `agent_shift`. with the schema below. 
+1. First normalize the DB and add a new table `agent_shift`. with the schema below. [1 story point].
 
 *   id.
 *   shift_id BIGINT FK shifts
@@ -51,13 +51,10 @@ Now the relationship would be.
 *   A shift belongs to a facility.
 
   
-2. Modify the existing functionality to save custom_id for agents when they are assigned to a shift by the facility admin, and make provision to save the record on the `agent_shift` table. You can also make provisions to migrate all the existing data stored into this table. When migrating the existing data, since `custom_id` would be null, we can generate a random UUID and save it for the existing records. 
+2. Modify the existing functionality to save custom_id for agents when they are assigned to a shift by the facility admin, and make provision to save the record on the `agent_shift` table. You can also make provisions to migrate all the existing data stored into this table. When migrating the existing data, since `custom_id` would be null, we can generate a random UUID and save it for the existing records. [3 story point].
 
   
-3. Update all SQL queries used in getShiftByFacility and generateReport, since the update would break the existing code. 
+3. Update all SQL queries used in getShiftByFacility and generateReport, since the update would break the existing code.  [1 story point].
 
   
-4. Add a new function named generateReportWithAgentCustomId(customIds: array) to generate PDF reports using the `agent_custom_id`. 
-
-  
-5. Add new test cases and fix broken test cases (if there's a function that saves a shift or assigns an agent to a shift, it would be broken since it needs the custom_id now).
+4. Add a new function named generateReportWithAgentCustomId(customIds: array) to generate PDF reports using the `agent_custom_id`. Add new test cases and fix broken test cases (if there's a function that saves a shift or assigns an agent to a shift, it would be broken since it needs the custom_id now). [3 story point].
